@@ -1,1 +1,390 @@
-stubby
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>davnot.dev</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;1,300&family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+
+            font-family: "Reddit Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 1.0em;
+        }
+
+        header, footer {
+            background-color: #f0f0f0;
+            padding: 1em;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        a {
+            color: #0066cc;
+        }
+
+        code {
+            background-color: #e0e0e0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8em;
+        }
+
+        blockquote {
+            margin: 1em 0;
+            padding: 0.75em 1.25em;
+            border-left: 4px solid #ccc;
+            background-color: #f9f9f9;
+            color: #555;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 0.8em 4.0em;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #f0f0f0;
+            }
+
+            header, footer {
+                background-color: #1e1e1e;
+            }
+
+            a {
+                color: #90caf9;
+            }
+
+            code {
+                background-color: #2e2e2e;
+                color: #f8f8f2;
+            }
+
+            blockquote {
+                margin: 1em 0;
+                padding: 0.75em 1.25em;
+                border-left: 4px solid #5e5e5e;
+                background-color: #1e1e1e;
+                color: #ccc;
+                font-style: italic;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hi, I am David.</h1>
+
+        <h2>I am a <br>
+            &emsp; programmer with <span id="experience">&gt;5</span>+ years of experience and a <br>
+            &emsp; <span id="collegeyear">[first year]+</span> CS&E student at UCLA.
+        </h2>
+
+        <h3>This site serves as an sort of index for my Github page with little short descriptions.</h3>
+        <h3>I hope there are projects here that you find useful and/or interesting</h3>
+        <h4>Everything here is made with much 💖 .</h4>
+
+        <noscript>No Javascript =&lt; Placeholder text only</noscript>
+    </header>
+
+    <main>
+        🚧 Under Construction 🚧 <br>
+        Many of the projects and pictures I really want to show you aren't here yet. <br>
+        But feel free to look around anyway.
+
+        <h2>My Top Picks</h2>
+
+        These projects aren't necessarily useful or game changing, but the ones that are very interesting and definitely conversation worthy.
+
+        <div class="content">
+            <h3>Mepeyew</h3>
+            <a href="https://github.com/davnotdev/mepeyew">https://github.com/davnotdev/mepeyew</a><br>
+
+            <br><br>
+
+            <img src="./assets/mepeyewtriangle.png" height="200.0em" alt="Mepeyew Triangle"/>
+            <img src="./assets/mepeyewpbr.png" height="200em" alt="Mepeyew PBR"/>
+
+            <br>
+            <blockquote>Some renderings done with Mepeyew</blockquote>
+            <br>
+
+
+            I love modern graphics APIs, but I feel that most of them require you to jump through hoops that really only the professionals should handle.
+            For example, memory management, pipeline barriers, etc.
+            <br><br>
+            Mepeyew was a library I built out of necessity.
+            On one hand, I wanted the feel of a powerful low level API, but on the other hand, I didn't need the ability to fine tune every aspect of the rendering process.
+            Mepeyew implements a fairly simple rendering API supporting WebGPU (not WGPU) and vulkan under the hood.
+            It is higher level than Vulkan but lower level than WGPU making it both lightweight and easy to use.
+            I implore you to read more on the Github page.
+            <br><br>
+            Given the speed at which WebGPU and the Rust ecosystem develops.
+            Mepeyew should still function fine, but its WebGPU backend and examples may be out of date. 
+            (<code>winit</code>, used in the examples, breaks its API every few months for some reason)
+        </div>
+
+        <div class="content">
+            <h3>Godot WebGPU Support</h3>
+            <a href="https://github.com/davnotdev/godot/tree/webgpu">https://github.com/davnotdev/godot/tree/webgpu</a><br>
+
+            <br><br>
+
+            <img src="./assets/cursedgodot.png" height="350.0em" alt="Godot with WebGPU"/>
+
+            <br>
+            <blockquote>
+                This was the first successful rendering of Godot under WebGPU. <br>
+                The colors look wacky only because WebGPU doesn't support swizzle operations (this is patched in now).
+            </blockquote>
+            <br>
+
+            This is a work-in-progress project implementing an experimental WebGPU / WGPU driver for the Godot game engine.
+            <br><br>
+            Godot 4's fancy new renderer is quite a bit lower level than what WGPU is designed for.
+            With WGPU, many prerequisite features for rendering are missing, and the API morphs and evolves spontaneously.
+            So is WebGPU possible in Godot?
+            Right now, I would say yes!
+            The project has been able to weave and dodge previously insurmountable obstacles, with few obstacles remaining.
+            We'll see how things play out with time.
+            <br><br>
+            Once again, this is very much a developing project.
+            You can find more information by messaging me on the Godot Contributor's Chat.
+        </div>
+
+        <div class="content">
+            <h3>ROOM</h3>
+            <a href="https://github.com/davnotdev/ROOM">https://github.com/davnotdev/ROOM</a><br>
+            <a href="https://sprig.hackclub.com/gallery/play/ROOM">SPRIG Game</a><br>
+
+            <br><br>
+
+            <img src="./assets/room0.png" height="300.0em" alt="Room Image"/>
+            <img src="./assets/room2.png" height="300.0em" alt="Room Image"/>
+            <img src="./assets/room1.png" height="300.0em" alt="Room Image"/>
+
+            <br>
+            <blockquote>
+                Gameplay from ROOM, a 3D rasterized game for the SPRIG console.
+            </blockquote>
+            <br>
+
+            Back in high school, there was an online community called Hack Club which made little homemade consoles called SPRIGs.
+            In order to get one, you had to make a game.
+            <br><br>
+            Being the graphics nerd I was and still am, I decided to make the first 3D rasterized SPRIG shooter game inspired by DOOM.
+            In ROOM, your goal is to navigate a maze of walls, picking up med kits while your health slowly drains.
+            All the while, you must evade and kill the spinning people who come to attack you.
+            <br><br>
+            The project features a custom 3D rasterizer with depth, culling, clipping, etc, but no shader support.
+            Being written in Typescript, you can play the game in the browser.
+            It obviously fails to run on actual hardware.
+            I made an attempt to port the game to Rust, but could not overcome the game's memory constraints. 
+            These Rust port attempts eventually manifested into another game called Subway Sprigsters.
+        </div>
+
+        <div class="content">
+            🚧 Under Construction 🚧 <br>
+        </div>
+
+        <h2>Useful Libraries / Utilities</h2>
+
+        <div class="content">
+            🚧 Just click these Github Links Please 🚧 <br>
+            <a href="https://github.com/davnotdev/mewo">https://github.com/davnotdev/mewo</a><br>
+            <a href="https://github.com/davnotdev/spirv_combimgsampsplitter">https://github.com/davnotdev/spirv_combimgsampsplitter</a><br>
+            <a href="https://github.com/davnotdev/quick-type-schema">https://github.com/davnotdev/quick-type-schema</a><br>
+            <a href="https://github.com/davnotdev/rst3s-td">https://github.com/davnotdev/rst3s-td</a><br>
+            <a href="https://github.com/davnotdev/php-quota">https://github.com/davnotdev/php-quota</a><br>
+            <a href="https://github.com/davnotdev/libsmolnes">https://github.com/davnotdev/libsmolnes</a><br>
+            <a href="https://github.com/davnotdev/sprig-boot">https://github.com/davnotdev/sprig-boot</a><br>
+            <a href="https://github.com/davnotdev/sprig-upload">https://github.com/davnotdev/sprig-upload</a><br>
+        </div>
+
+        <h2>Hardware</h2>
+
+        <div class="content">
+            <h3>Cha Cha the Ro(w)ver</h3>
+
+            <br>
+            <img src="./assets/chacha.png" height="400.0em" alt="Our Rover"/>
+            <br>
+            <br>
+
+            <a href="https://github.com/davnotdev/chachatherowver">https://github.com/davnotdev/chachatherowver</a><br>
+            At UCLA, I took ENGR 1AR, an amazing class where we (as a team) created an autonomous rover!
+            This class taught me that even if your software is flawless (our software was not even close to being flawless), a slight variation in the battery's voltage can derail the entire project.
+            In the end, our rover could mostly navigate the class' obstacle course, but 1 the grabbing mechanism broke and 2 the battery was not strong enough to power the claw's servos.
+            Overall, a 10/10 experience.
+        </div>
+
+        <h2>Silly Projects</h2>
+
+            <div class="content">
+                <h3>Treats for the Wicked</h3>
+                <a href="https://github.com/davnotdev/treatsforthewicked">https://github.com/davnotdev/treatsforthewicked</a><br>
+                This was my submission for Hack Club's Autumn Hackjam 2023.
+                This game is about committing various crimes to get as much candy as possible.
+                <br><br>
+                This is more of a tech demo that a serious game.
+                I created this game using <code>mewo</code> and <code>mepeyew</code>!
+                I didn't have enough time to hack in a text renderer or much of a renderer at all.
+                The game is just goofy and not very good at all.
+            </div>
+
+            <div class="content">
+                <h3>Annoy Roommates</h3>
+                <a href="https://github.com/davnotdev/annoy_roommate">https://github.com/davnotdev/annoy_roommate</a><br>
+                When someone approaches me and asks me why coding is useful as a skill, I show them this.
+                Essentially, this is a basic HTML frontend and Rust backend that when run on my server (an old DELL laptop under my desk), allows me to remotely send sound effects, music, and TTS to my roommates.
+                It sounds evil, but it does have practical applications ie when someone is locked out of the dorm.
+            </div>
+
+        <h2>Hackathon / Game Jam Projects</h2>
+
+        <div class="content">
+            🚧 Under Construction 🚧 <br>
+        </div>
+
+        <h2>Personal Scripts and Configs</h2>
+
+        This is my junk drawer filled with scripts and configuration files that I use myself. 
+
+        <div class="content">
+            <h3><code>dotnvim</code></h3>
+            <a href="https://github.com/davnotdev/dotnvim">https://github.com/davnotdev/dotnvim</a><br>
+            This is the neovim configuration I have been using for years.
+            It has been used for web development, low level development, game development, work, note taking, homework...
+            The list goes on.
+            <br><br>
+            Many of the dependencies are outdated since the neovim ecosystem evolves so rapidly.
+            But if you follow the instructions and use the correct version of neovim, it works perfectly.
+            In fact, this page was created using it.
+            This configuration has served me well.
+        </div> 
+
+        <div class="content">
+            <h3>David's Jumpstart Scripts</h3>
+            <a href="https://github.com/davnotdev/davids_jumpstart">https://github.com/davnotdev/davids_jumpstart</a><br>
+            This is a set of minimal bash scripts that are designed to "jump start" a new Linux server with my code editor and various utilities that aren't typically installed.
+            Although the project is incomplete, I have successfully used these scripts to jump start UCLA's seasnet and DMA servers.
+        </div>
+
+
+        <!--
+
+            The Template:
+
+            <div class="content">
+                <h3><code></code><h3>
+                <a href=""></a><br>
+            </div>
+
+        -->
+
+        <!--
+
+            # Content I want to cover:
+            ## Top Picks
+
+            - [x] mepeyew
+            - [x] godot (fork)
+            - [x] Room / RoomOnSprig
+            - [ ] subway_sprigsters
+            - [ ] crypt_of_the_silver_phoenix
+
+            ## Useful Libraries / Utitlies
+
+            - [ ] mewo
+            - [ ] quick-type-schema
+            - [ ] spirv_combimgsampsplitter
+            - [ ] rst3s-td
+            - [ ] php-quota
+            - [ ] libsmolnes
+            - [ ] schemajen
+            - [ ] sprig-boot
+            - [ ] sprig-upload
+            - [ ] termbox-sys
+
+            ## Demos
+
+            - [ ] vulkan-rust-step-by-step
+
+            ## Hardware
+
+            - [x] chachatherowver
+
+            ## Silly Projects
+
+            - [x] treatsforthewicked
+            - [x] annoy_roommate
+            - [ ] renglish
+
+            ## Hackathons and Game Jams
+
+            - [ ] AxolotlGame
+            - [ ] https://github.com/Unite-Hacks
+
+            ## Personal Scripts and Configs
+
+            - [x] dotnvim
+            - [x] davids_jumpstart
+
+            ## Misc
+
+            - [ ] burrow
+            - [ ] bubbel-backend
+
+        -->
+
+    </main>
+
+    <script>
+        //  These estimates should be good enough.
+        document.getElementById("experience").innerText = calc(new Date(2019, 6));
+        collegeYears = calc(new Date(2024, 6));
+        collegeYearsString = "[first year]+";
+        if (collegeYears <= 1.0) {
+            collegeYearsString = "first year";
+        } else if (collegeYears <= 2.0) {
+            collegeYearsString = "second year";
+        } else if (collegeYearsString <= 3.0) {
+            collegeYearsString = "third year";
+        } else if (collegeYearsString <= 4.0) {
+            collegeYearsString = "fourth year";
+        }
+        document.getElementById("collegeyear").innerText = collegeYearsString;
+
+        function calc(start) {
+            let timeSinceStart = Date.now() - start.getTime();
+            let dateSinceStart = new Date(timeSinceStart);
+            return Math.floor(
+                (   
+                    (Math.abs(dateSinceStart.getUTCFullYear() - 1970) +
+                        dateSinceStart.getMonth() / 12) * 10
+                )
+            ) / 10;
+        }
+
+    </script>
+</body>
+</html>
+

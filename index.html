@@ -20,7 +20,7 @@
             font-optical-sizing: auto;
             font-weight: 300;
             font-style: normal;
-            font-size: 1.0em;
+            font-size: 0.9em;
         }
 
         header, footer {
@@ -55,6 +55,12 @@
 
         .content {
             padding: 0.8em 4.0em;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -98,14 +104,107 @@
             &emsp; <span id="collegeyear">[first year]+</span> CS&E student at UCLA.
         </h2>
 
-        <h3>This site serves as an sort of index for my Github page with short little descriptions.</h3>
-        <h3>I hope there are projects here that you find useful and/or interesting</h3>
-        <h4>Everything here is made with much 💖 .</h4>
-
         <noscript>No Javascript =&lt; Placeholder text only</noscript>
     </header>
 
     <main>
+
+        <h2>
+            I love everything Rust, Low Level, and Graphics.
+            <br> 
+            Here are some projects I am very proud of.
+        </h2>
+
+        <div class="container"> 
+            <div class="content">
+                <h3>Mepeyew</h3>
+                <a href="https://github.com/davnotdev/mepeyew">https://github.com/davnotdev/mepeyew</a><br>
+
+                <br><br>
+
+                <img src="./assets/mepeyewtriangle.png" height="200.0em" alt="Mepeyew Triangle"/>
+                <img src="./assets/mepeyewpbr.png" height="200em" alt="Mepeyew PBR"/>
+
+                <br>
+                <blockquote>Some renderings done with Mepeyew</blockquote>
+                <br>
+
+
+                I love modern graphics APIs, but I feel that most of them require you to jump through hoops that really only the professionals should handle.
+                For example, memory management, pipeline barriers, etc.
+                <br><br>
+                Mepeyew was a library I built out of necessity.
+                On one hand, I wanted the feel of a powerful low level API, but on the other hand, I didn't need the ability to fine tune every aspect of the rendering process.
+                Mepeyew implements a fairly simple rendering API supporting WebGPU (not WGPU) and Vulkan under the hood.
+                It is higher level than Vulkan but lower level than WGPU making it both lightweight and easy to use.
+                I implore you to read more on the Github page.
+                <br><br>
+                Given the speed at which WebGPU and the Rust ecosystem develops.
+                Mepeyew should still function fine, but its WebGPU backend and examples may be out of date. 
+                (<code>winit</code>, used in the examples, breaks its API very often for some reason)
+            </div>
+
+            <div class="content">
+                <h3>Godot WebGPU Support</h3>
+                <a href="https://github.com/davnotdev/godot/tree/webgpu">https://github.com/davnotdev/godot/tree/webgpu</a><br>
+
+                <br><br>
+
+                <img src="./assets/cursedgodot.png" height="200.0em" alt="Godot with WebGPU"/>
+
+                <br>
+                <blockquote>
+                    This was the first successful rendering of Godot under WebGPU. <br>
+                    The colors look wacky only because WebGPU doesn't support swizzle operations (this is patched in now).
+                </blockquote>
+                <br>
+
+                This is a work-in-progress project implementing an experimental WebGPU / WGPU driver for the Godot game engine.
+                <br><br>
+                Godot 4's fancy new renderer is quite a bit lower level than what WGPU is designed for.
+                With WGPU, many prerequisite features for rendering are missing, and the API morphs and evolves spontaneously.
+                So is WebGPU possible in Godot?
+                Right now, I would say yes!
+                The project has been able to weave and dodge previously insurmountable obstacles, with few obstacles remaining.
+                We'll see how things play out with time.
+                <br><br>
+                Once again, this is very much a developing project.
+                You can find more information by messaging me on the Godot Contributor's Chat.
+            </div>
+
+            <div class="content">
+                <h3>ROOM</h3>
+                <a href="https://github.com/davnotdev/ROOM">https://github.com/davnotdev/ROOM</a><br>
+                <a href="https://sprig.hackclub.com/gallery/play/ROOM">ROOM Published</a><br>
+
+                <br><br>
+
+                <img src="./assets/room0.png" height="200.0em" alt="Room Image"/>
+                <img src="./assets/room2.png" height="200.0em" alt="Room Image"/>
+                <img src="./assets/room1.png" height="200.0em" alt="Room Image"/>
+
+                <br>
+                <blockquote>
+                    Gameplay from ROOM, a 3D rasterized game for the SPRIG console.
+                </blockquote>
+                <br>
+
+                Back in high school, there was an online community called Hack Club which made little homemade consoles called SPRIGs.
+                In order to get one, you had to make a game.
+                <br><br>
+                Being the graphics nerd I was and still am, I decided to make the first 3D rasterized SPRIG shooter game inspired by DOOM.
+                In ROOM, your goal is to navigate a maze of walls, picking up med kits while your health slowly drains.
+                All the while, you must evade and kill the spinning people who come to attack you.
+                <br><br>
+                The project features a custom 3D rasterizer with depth, culling, clipping, etc, but no shader support.
+                Being written in Typescript, you can play the game in the browser.
+                It obviously fails to run on actual hardware.
+                I made an attempt to port the game to Rust, but could not overcome the game's memory constraints. 
+                These Rust port attempts eventually manifested into another game called Subway Sprigsters.
+            </div>
+        </div>
+
+        <!--
         🚧 Under Construction 🚧 <br>
         Many of the projects and pictures I really want to show you aren't here yet. <br>
         But feel free to look around anyway.
@@ -114,92 +213,7 @@
 
         These projects aren't necessarily useful or game changing, but the ones that are very interesting and definitely conversation worthy.
 
-        <div class="content">
-            <h3>Mepeyew</h3>
-            <a href="https://github.com/davnotdev/mepeyew">https://github.com/davnotdev/mepeyew</a><br>
 
-            <br><br>
-
-            <img src="./assets/mepeyewtriangle.png" height="200.0em" alt="Mepeyew Triangle"/>
-            <img src="./assets/mepeyewpbr.png" height="200em" alt="Mepeyew PBR"/>
-
-            <br>
-            <blockquote>Some renderings done with Mepeyew</blockquote>
-            <br>
-
-
-            I love modern graphics APIs, but I feel that most of them require you to jump through hoops that really only the professionals should handle.
-            For example, memory management, pipeline barriers, etc.
-            <br><br>
-            Mepeyew was a library I built out of necessity.
-            On one hand, I wanted the feel of a powerful low level API, but on the other hand, I didn't need the ability to fine tune every aspect of the rendering process.
-            Mepeyew implements a fairly simple rendering API supporting WebGPU (not WGPU) and vulkan under the hood.
-            It is higher level than Vulkan but lower level than WGPU making it both lightweight and easy to use.
-            I implore you to read more on the Github page.
-            <br><br>
-            Given the speed at which WebGPU and the Rust ecosystem develops.
-            Mepeyew should still function fine, but its WebGPU backend and examples may be out of date. 
-            (<code>winit</code>, used in the examples, breaks its API every few months for some reason)
-        </div>
-
-        <div class="content">
-            <h3>Godot WebGPU Support</h3>
-            <a href="https://github.com/davnotdev/godot/tree/webgpu">https://github.com/davnotdev/godot/tree/webgpu</a><br>
-
-            <br><br>
-
-            <img src="./assets/cursedgodot.png" height="350.0em" alt="Godot with WebGPU"/>
-
-            <br>
-            <blockquote>
-                This was the first successful rendering of Godot under WebGPU. <br>
-                The colors look wacky only because WebGPU doesn't support swizzle operations (this is patched in now).
-            </blockquote>
-            <br>
-
-            This is a work-in-progress project implementing an experimental WebGPU / WGPU driver for the Godot game engine.
-            <br><br>
-            Godot 4's fancy new renderer is quite a bit lower level than what WGPU is designed for.
-            With WGPU, many prerequisite features for rendering are missing, and the API morphs and evolves spontaneously.
-            So is WebGPU possible in Godot?
-            Right now, I would say yes!
-            The project has been able to weave and dodge previously insurmountable obstacles, with few obstacles remaining.
-            We'll see how things play out with time.
-            <br><br>
-            Once again, this is very much a developing project.
-            You can find more information by messaging me on the Godot Contributor's Chat.
-        </div>
-
-        <div class="content">
-            <h3>ROOM</h3>
-            <a href="https://github.com/davnotdev/ROOM">https://github.com/davnotdev/ROOM</a><br>
-            <a href="https://sprig.hackclub.com/gallery/play/ROOM">SPRIG Game</a><br>
-
-            <br><br>
-
-            <img src="./assets/room0.png" height="300.0em" alt="Room Image"/>
-            <img src="./assets/room2.png" height="300.0em" alt="Room Image"/>
-            <img src="./assets/room1.png" height="300.0em" alt="Room Image"/>
-
-            <br>
-            <blockquote>
-                Gameplay from ROOM, a 3D rasterized game for the SPRIG console.
-            </blockquote>
-            <br>
-
-            Back in high school, there was an online community called Hack Club which made little homemade consoles called SPRIGs.
-            In order to get one, you had to make a game.
-            <br><br>
-            Being the graphics nerd I was and still am, I decided to make the first 3D rasterized SPRIG shooter game inspired by DOOM.
-            In ROOM, your goal is to navigate a maze of walls, picking up med kits while your health slowly drains.
-            All the while, you must evade and kill the spinning people who come to attack you.
-            <br><br>
-            The project features a custom 3D rasterizer with depth, culling, clipping, etc, but no shader support.
-            Being written in Typescript, you can play the game in the browser.
-            It obviously fails to run on actual hardware.
-            I made an attempt to port the game to Rust, but could not overcome the game's memory constraints. 
-            These Rust port attempts eventually manifested into another game called Subway Sprigsters.
-        </div>
 
         <div class="content">
             🚧 Under Construction 🚧 <br>
@@ -287,6 +301,7 @@
             This is a set of minimal bash scripts that are designed to "jump start" a new Linux server with my code editor and various utilities that aren't typically installed.
             Although the project is incomplete, I have successfully used these scripts to jump start UCLA's seasnet and DMA servers.
         </div>
+        -->
 
 
         <!--

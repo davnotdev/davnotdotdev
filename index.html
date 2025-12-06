@@ -167,7 +167,7 @@
 
                 <img src="./assets/godotwg1.png" height="300.0em" alt="Godot with WebGPU 1"/>
                 <img src="./assets/godotwg0.png" height="300.0em" alt="Godot with WebGPU 0"/>
-                <img src="./assets/godotwg2.png" height="50.0em" alt="Godot with WebGPU 0"/>
+                <img src="./assets/godotwg2.png" height="50.0em" alt="Godot with WebGPU 2"/>
 
                 <br>
                 <blockquote>
@@ -187,6 +187,22 @@
                 Once again, this is very much a developing project.
                 You can find more information by messaging me on the Godot Contributor's Chat.
             </div>
+
+            <div class="content">
+                <h3>spirv-webgpu-transform</h3>
+                <a href="https://github.com/davnotdev/spirv-webgpu-transform">https://github.com/davnotdev/spirv-webgpu-transform</a><br>
+
+                <br>
+
+                This is an experimental little project that is developing alongside the Godot WebGPU project.
+                ("Little" is an understatement, this library is CRUCIAL to project.)
+                WebGPU is infamous for not supporting certain common GLSL constructs.
+                Combined image samplers are the big one, among others.
+                This library edits SPIR-V coming from GLSL, splitting the texture and sampler.
+                That is one such transformation, and I expect many more to come especially as the WebGPU driver project moves towards web support.
+                (Sounds strange that a WebGPU driver does not support web, but this milestone is more difficult than it sounds.)
+            </div>
+
 
             <div class="content">
                 <h3>ROOM</h3>
